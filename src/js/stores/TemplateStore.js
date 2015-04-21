@@ -9,6 +9,12 @@ var CHANGE_EVENT = 'change';
 var userTemplate = {};
 
 var TemplateStore = assign({}, EventEmitter.prototype, {
+  saveTemplate: function(template){
+
+  },
+  getTemplate: function(id){
+
+  },
   emitChange: function(){
     this.emit(CHANGE_EVENT);
   },
@@ -24,11 +30,15 @@ var TemplateStore = assign({}, EventEmitter.prototype, {
 
 AppDispatcher.register(function(action){
   switch(action.actionType){
+    //TODO
     case TemplateConstants.SAVE:
-      console.log('Trying to save');
+      console.log("Trying to save template");
+      TemplateStore.saveTemplate(action.template);
       break;
+    //TODO
     case TemplateConstants.GET_TEMPLATE:
-      console.log('Trying to get user template');
+      console.log("Trying to get template");
+      TemplateStore.getTemplate(action.id);
       break;
     default:
       //no op
