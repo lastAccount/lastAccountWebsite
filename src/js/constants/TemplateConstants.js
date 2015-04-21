@@ -1,8 +1,7 @@
 var keyMirror = require('keymirror');
 
-var TemplateComponents = keyMirror({
-  SAVE: null,
-  RETRIEVE: null
+var TemplateConstants = keyMirror({
+  SAVE: null
 });
 
-module.exports = TemplateComponents;
+module.exports = TemplateConstants;
