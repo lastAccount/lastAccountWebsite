@@ -7,6 +7,12 @@ var TemplateActions = {
       actionType: TemplateConstants.SAVE,
       template: template
     });
+  },
+  get: function(id){
+    AppDispatcher.dispatch({
+      actionType: TemplateConstants.GET_TEMPLATE,
+      id: id
+    })
   }
 };
 
