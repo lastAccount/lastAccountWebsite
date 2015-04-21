@@ -18,43 +18,49 @@ var Template = React.createClass({
 
   },
   render: function(){
-    <form id="template-form">
-      //Username
-      <TextInput
-        className="template-input"
-        id="template-username"
-        type="text"
-        placeholder="Username"
-        onSave={this._onSave} />
-      //Email
-      <TextInput
-        className="template-input"
-        id="template-email"
-        type="email"
-        placeholder="Email"
-        onSave={this._onSave} />
-      //Full Name
-      <TextInput
-        className="template-input"
-        id="template-fullname"
-        type="text"
-        placeholder="Full Name"
-        onSave={this._onSave} />
-      //First Name
-      <TextInput
-        className="template-input"
-        id="template-firstname"
-        type="text"
-        placeholder="First Name"
-        onSave={this._onSave} />
-      //Last Name
-      <TextInput
-        className="template-input"
-        id="template-lastname"
-        type="text"
-        placeholder="Last Name"
-        onSave={this._onSave} />
-    </form>
+    return (
+      <form id="template-form">
+        <label for="template-username">Username</label>
+        <TextInput
+          className="template-input"
+          id="template-username"
+          type="text"
+          placeholder="Username"
+          onSave={this._onSave} />
+        <br />
+        <label for="template-email">Email</label>
+        <TextInput
+          className="template-input"
+          id="template-email"
+          type="email"
+          placeholder="Email"
+          onSave={this._onSave} />
+        <br />
+        <label for="template-fullname">Full Name</label>
+        <TextInput
+          className="template-input"
+          id="template-fullname"
+          type="text"
+          placeholder="Full Name"
+          onSave={this._onSave} />
+        <br />
+        <label for="template-firstname">First Name</label>
+        <TextInput
+          className="template-input"
+          id="template-firstname"
+          type="text"
+          placeholder="First Name"
+          onSave={this._onSave} />
+        <br />
+        <label for="template-lastname">Last Name</label>
+        <TextInput
+          className="template-input"
+          id="template-lastname"
+          type="text"
+          placeholder="Last Name"
+          onSave={this._onSave} />
+      </form>
+    );
   }
 });
 
