@@ -20,7 +20,7 @@ var Template = React.createClass({
   render: function(){
     return (
       <form id="template-form">
-        <label for="template-username">Username</label>
+        <label htmlFor="template-username">Username</label>
         <TextInput
           className="template-input"
           id="template-username"
@@ -28,7 +28,7 @@ var Template = React.createClass({
           placeholder="Username"
           onSave={this._onSave} />
         <br />
-        <label for="template-email">Email</label>
+        <label htmlFor="template-email">Email</label>
         <TextInput
           className="template-input"
           id="template-email"
@@ -36,7 +36,7 @@ var Template = React.createClass({
           placeholder="Email"
           onSave={this._onSave} />
         <br />
-        <label for="template-fullname">Full Name</label>
+        <label htmlFor="template-fullname">Full Name</label>
         <TextInput
           className="template-input"
           id="template-fullname"
@@ -44,7 +44,7 @@ var Template = React.createClass({
           placeholder="Full Name"
           onSave={this._onSave} />
         <br />
-        <label for="template-firstname">First Name</label>
+        <label htmlFor="template-firstname">First Name</label>
         <TextInput
           className="template-input"
           id="template-firstname"
@@ -52,7 +52,7 @@ var Template = React.createClass({
           placeholder="First Name"
           onSave={this._onSave} />
         <br />
-        <label for="template-lastname">Last Name</label>
+        <label htmlFor="template-lastname">Last Name</label>
         <TextInput
           className="template-input"
           id="template-lastname"
