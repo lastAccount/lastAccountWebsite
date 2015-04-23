@@ -67,7 +67,7 @@ gulp.task('serve', function(){
     script: 'server.js'
   });
 });
-gulp.task('startDB', function(){
-  return gulp.src('')
-    .pipe(plugins.shell(['mongod']));
-});
+// gulp.task('startDB', function(){
+//   return gulp.src('')
+//     .pipe(plugins.shell(['mongod']));
+// });
