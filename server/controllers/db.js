@@ -1,32 +1,14 @@
+var mongoose = require('mongoose');
 /**
- * Start up Redis
+ * MongoDB connection and controller
  */
-var redis = require('redis');
-var client = redis.createClient();
-
-client.on("error", function(err){
-  console.error("REDIS ERROR:", err);
+mongoose.connect("mongodb://localhost/lastAccount");
+mongoose.connection.on("error", function(err) {
+  console.error(err);
+  console.error("MongoDB Connection Error.");   
 });
 
-var redisController = {
-  /**
-   * Saves User template as value to session key
-   */
-  save: function(){
-
-  },
-  /** 
-   * Get user template associated with session key
-   */
-  get: function(){
-
-  },
-  /**
-   * Deletes template associated with key
-   */
-  remove: function(){
-
-  }
-
+var mongoController = {
+  
 }
-module.exports = redisController;
+module.exports = mongoController;
