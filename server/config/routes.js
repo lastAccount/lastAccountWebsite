@@ -7,7 +7,7 @@ function router(app, passport){
    * Send back lastAccount templates associated with user
    */
   app.get('/api/templates', isLoggedIn, function(req, res){
-
+    res.sendStatus(200);
   });
   /**
    * Create template
@@ -24,9 +24,11 @@ function router(app, passport){
   /**
    * Handle Signup
    */
-  app.post('/api/signup', function(req, res){
-
-  });
+  app.post('/api/signup', passport.authenticate('local-signup', {
+    successRedirect: '/api/templates',
+    failureRedirect: '/auth',
+    failureFlash: true
+  }));
   /** 
    * Handle login
    */
