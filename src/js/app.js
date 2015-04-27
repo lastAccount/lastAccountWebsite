@@ -2,12 +2,12 @@ var React = require('react');
 /**
  * Required Components
  */
-var Template = require('./components/Template');
+var Signup = require('./components/SignupView');
 
 var App = React.createClass({
   render: function(){
     return (
-      <Template />
+      <Signup />
     );
   }
 });

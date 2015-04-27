@@ -12,7 +12,8 @@ var Signup = React.createClass({
   },
   render: function(){
     return (
-      <AuthField 
+      <AuthField
+        label="Login"
         className="login"
         emailId="login-email"
         passwordId="login-password"
