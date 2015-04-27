@@ -6,7 +6,7 @@ var AuthActions = require('../actions/AuthActions')
  */
 var AuthField = require('./AuthField');
 
-var Signup = React.createClass({
+var Login = React.createClass({
   _onSave: function(email, password){
     AuthActions.login(email, password);
   },

@@ -6,13 +6,13 @@ function router(app, passport){
   /**
    * Home Page, templates
    */
-  app.get('/', isLoggedIn, function(req, res){
-    var userObj = {
-      id: req.user._id,
-      templates: req.user.templates
-    };
-    res.send(userObj);
-  });
+  // app.get('/', isLoggedIn, function(req, res){
+  //   var userObj = {
+  //     id: req.user._id,
+  //     templates: req.user.templates
+  //   };
+  //   res.send(userObj);
+  // });
   /**
    * Send back lastAccount templates associated with user
    * Req params: User ID
@@ -40,7 +40,7 @@ function router(app, passport){
   /**
    * Handle Signup
    */
-  app.post('/api/signup', passport.authenticate('local-signup', {
+  app.post('/auth/signup', passport.authenticate('local-signup', {
     successRedirect: '/',
     failureRedirect: '/auth',
     failureFlash: true
@@ -48,7 +48,7 @@ function router(app, passport){
   /** 
    * Handle login
    */
-  app.post('/api/login', passport.authenticate('local-login', {
+  app.post('/auth/login', passport.authenticate('local-login', {
     successRedirect: '/',
     failureRedirect: '/auth',
     failureFlash: true
