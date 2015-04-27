@@ -15,18 +15,24 @@ function router(app, passport){
   });
   /**
    * Send back lastAccount templates associated with user
+   * Req params: User ID
+   * Response: Templates of User
    */
   app.get('/api/templates', function(req, res){
     res.sendStatus(200);
   });
   /**
    * Create template
+   * Req params: User ID, template object
+   * Post: Push template object onto templates array of user
    */
   app.post('/api/create', function(req, res){
 
   });
   /**
    * Update template
+   * Req params: Template object (with ID)
+   * Post: Update template doc
    */
   app.post('/api/update', function(req, res){
 
