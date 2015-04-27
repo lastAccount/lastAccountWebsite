@@ -1,6 +1,7 @@
 /**
  * Dependencies
  */
+
 var User = require('../Models/User');
 
 function passportConfiguration(passport){

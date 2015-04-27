@@ -1,6 +1,7 @@
 /**
  * MODULE DEPENDENCIES
  */
+var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
@@ -13,7 +14,11 @@ function serverConfiguration(app){
   /**
    * MongoDB connection
    */
-
+  mongoose.connect("mongodb://localhost/lastAccount");
+  mongoose.connection.on("error", function(err) {
+    console.error(err);
+    console.error("MongoDB Connection Error.");   
+  });
 
   /**
    * Middleware

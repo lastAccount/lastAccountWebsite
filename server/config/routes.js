@@ -1,5 +1,5 @@
 function router(app, passport){
-
+  app.get('/api/template', function())
 }
 
 /**
