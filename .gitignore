@@ -2,3 +2,5 @@ TODO.md
 .DS_Store
 /node_modules
 npm-debug.log
+/dist/
+server/config/secret.js

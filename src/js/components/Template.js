@@ -10,7 +10,6 @@ var Template = React.createClass({
    * Grab existing template from local storage
    */
   getInitialState: function(){
-    var existingTemplate = localStorage['lastAccountTemplate'];
     return {
       
     };
@@ -19,41 +18,49 @@ var Template = React.createClass({
 
   },
   render: function(){
-    //Username
-    <TextInput
-      className="template-input"
-      id="template-username"
-      type="text"
-      placeholder="Username"
-      onSave={this._onSave} />
-    //Email
-    <TextInput
-      className="template-input"
-      id="template-email"
-      type="email"
-      placeholder="Email"
-      onSave={this._onSave} />
-    //Full Name
-    <TextInput
-      className="template-input"
-      id="template-fullname"
-      type="text"
-      placeholder="Full Name"
-      onSave={this._onSave} />
-    //First Name
-    <TextInput
-      className="template-input"
-      id="template-firstname"
-      type="text"
-      placeholder="First Name"
-      onSave={this._onSave} />
-    //Last Name
-    <TextInput
-      className="template-input"
-      id="template-lastname"
-      type="text"
-      placeholder="Last Name"
-      onSave={this._onSave} />
+    return (
+      <form id="template-form">
+        <label htmlFor="template-username">Username</label>
+        <TextInput
+          className="template-input"
+          id="template-username"
+          type="text"
+          placeholder="Username"
+          onSave={this._onSave} />
+        <br />
+        <label htmlFor="template-email">Email</label>
+        <TextInput
+          className="template-input"
+          id="template-email"
+          type="email"
+          placeholder="Email"
+          onSave={this._onSave} />
+        <br />
+        <label htmlFor="template-fullname">Full Name</label>
+        <TextInput
+          className="template-input"
+          id="template-fullname"
+          type="text"
+          placeholder="Full Name"
+          onSave={this._onSave} />
+        <br />
+        <label htmlFor="template-firstname">First Name</label>
+        <TextInput
+          className="template-input"
+          id="template-firstname"
+          type="text"
+          placeholder="First Name"
+          onSave={this._onSave} />
+        <br />
+        <label htmlFor="template-lastname">Last Name</label>
+        <TextInput
+          className="template-input"
+          id="template-lastname"
+          type="text"
+          placeholder="Last Name"
+          onSave={this._onSave} />
+      </form>
+    );
   }
 });
 

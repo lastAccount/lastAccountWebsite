@@ -12,15 +12,6 @@ var session = require('express-session');
 
 function serverConfiguration(app){
   /**
-   * MongoDB connection
-   */
-  mongoose.connect("mongodb://localhost/lastAccount");
-  mongoose.connection.on("error", function(err) {
-    console.error(err);
-    console.error("MongoDB Connection Error.");
-  });
-
-  /**
    * Middleware
    */
   app.use(morgan('dev'));
