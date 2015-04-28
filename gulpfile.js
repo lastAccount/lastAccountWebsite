@@ -11,6 +11,7 @@ var plugins = require('gulp-load-plugins')();
 var path = {
   HTML: 'src/index.html',
   CSS: 'src/css/app.css',
+  LESS: 'src/less/main.less',
   OUT: 'bundle.js',  
   MINIFIED_OUT: 'bundle.min.js',
   DEST: 'dist',
@@ -23,7 +24,7 @@ var path = {
 /**
  * DEVELOPMENT TASKS
  */
-gulp.task('default', ['devReplace', 'watch', 'serve']);
+gulp.task('default', ['devReplace', 'less', 'watch', 'serve']);
 
 gulp.task('copy', function(){
   gulp.src(path.HTML)
@@ -39,6 +40,14 @@ gulp.task('devReplace', function(){
       'js': 'src/' + path.OUT
     }))
     .pipe(gulp.dest(path.DEST));
+});
+gulp.task('less', function() {
+  return gulp.src(path.LESS)
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.less())
+    .pipe(plugins.autoprefixer({cascade: false, browsers: ['last 2 versions']}))
+    .pipe(plugins.sourcemaps.write())
+    .pipe(gulp.dest(path.DEST_CSS));
 });
 gulp.task('watch', function(){
   gulp.watch(path.HTML, ['copy']);
