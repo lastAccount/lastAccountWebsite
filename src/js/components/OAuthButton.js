@@ -1,5 +1,8 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
+var mui = require('material-ui');
+var RaisedButton = mui.RaisedButton;
+var FontIcon = mui.FontIcon;
 
 var OAuthButton = React.createClass({
   propTypes: {
@@ -10,9 +13,12 @@ var OAuthButton = React.createClass({
   },
   render: function(){
     return (
-      <button>
-        Log In with {this.props.provider}
-      </button>
+      <div className="button-container">
+        <RaisedButton linkButton={true} href="https://google.com" secondary={true}>
+          <FontIcon className="muidocs-icon-custom-github example-button-icon"/>
+          <span className="mui-raised-button-label">Log In with {this.props.provider} </span>
+        </RaisedButton>
+      </div>
     );
   }
 });
