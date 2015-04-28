@@ -9,7 +9,6 @@ var TextInput = require('./TextInput');
 var AuthField = React.createClass({
   propTypes: {
     label: ReactPropTypes.string,
-    labelFor: ReactPropTypes.string,
     className: ReactPropTypes.string,
     emailId: ReactPropTypes.string,
     passwordId: ReactPropTypes.string,
@@ -28,17 +27,17 @@ var AuthField = React.createClass({
         <label htmlFor={this.props.className}>{this.props.label}</label>
         <br />
         <TextInput
+          label="Email"
           className="emailField"
           id={this.props.emailId}
           type="text" 
-          placeholder="Email"
           onSave={this._onSave} />
         <br />
         <TextInput
+          label="Password"
           className="passwordField"
           id={this.props.passwordId}
           type="password" 
-          placeholder="Password"
           onSave={this._onSave} />
       </form>
     );
