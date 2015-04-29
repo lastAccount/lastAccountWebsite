@@ -8,11 +8,11 @@ var OAuthButton = require('./OAuthButton');
 var AuthView = React.createClass({
   render: function(){
     return (
-      <div id="authcontainer">
-      <Signup />
-      <Login />
-      <OAuthButton 
-        provider="Google"/>
+      <div id="auth-container">
+        <Signup />
+        <Login />
+        <OAuthButton 
+          provider="Google"/>
       </div>
     );
   }

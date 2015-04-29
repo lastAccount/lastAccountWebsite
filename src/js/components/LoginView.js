@@ -1,6 +1,6 @@
 var React = require('react');
 var $ = require('jquery');
-var AuthActions = require('../actions/AuthActions')
+var AuthActions = require('../actions/AuthActions');
 /**
  * Component Dependencies
  */
