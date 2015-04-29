@@ -1,3 +1,6 @@
+/**
+ * For custom (i.e. not Material-UI) styling
+ */
 .app {
   margin-top: -8em;
   height: 600px;
