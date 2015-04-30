@@ -20,44 +20,39 @@ var Template = React.createClass({
   render: function(){
     return (
       <form id="template-form">
-        <label htmlFor="template-username">Username</label>
         <TextInput
+          label="Username"
           className="template-input"
           id="template-username"
           type="text"
-          placeholder="Username"
           onSave={this._onSave} />
         <br />
-        <label htmlFor="template-email">Email</label>
         <TextInput
+          label="Email"
           className="template-input"
           id="template-email"
           type="email"
-          placeholder="Email"
           onSave={this._onSave} />
         <br />
-        <label htmlFor="template-fullname">Full Name</label>
         <TextInput
+          label="Full Name"
           className="template-input"
           id="template-fullname"
           type="text"
-          placeholder="Full Name"
           onSave={this._onSave} />
         <br />
-        <label htmlFor="template-firstname">First Name</label>
         <TextInput
+          label="First Name"
           className="template-input"
           id="template-firstname"
           type="text"
-          placeholder="First Name"
           onSave={this._onSave} />
         <br />
-        <label htmlFor="template-lastname">Last Name</label>
         <TextInput
+          label="Last Name"
           className="template-input"
           id="template-lastname"
           type="text"
-          placeholder="Last Name"
           onSave={this._onSave} />
       </form>
     );

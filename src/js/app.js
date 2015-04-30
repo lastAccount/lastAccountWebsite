@@ -8,11 +8,12 @@ require("react-tap-event-plugin")();
  * Required Components
  */
 var Auth = require('./components/AuthView');
+var Template = require('./components/Template');
 
 var App = React.createClass({
   render: function(){
     return (
-      <Auth />
+      <Template />
     );
   }
 });
