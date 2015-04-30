@@ -9,7 +9,7 @@ var CHANGE_EVENT = 'change';
 var AuthStore = assign({}, EventEmitter.prototype, {
   signup: function(email, password){
     $.ajax({
-      url: window.location.origin + '/api/signup',
+      url: window.location.origin + '/auth/signup',
       type: 'POST',
       data: JSON.stringify({
         email: email,
@@ -30,7 +30,7 @@ var AuthStore = assign({}, EventEmitter.prototype, {
   },
   login: function(email, password){
     $.ajax({
-      url: window.location.origin + '/api/login',
+      url: window.location.origin + '/auth/login',
       type: 'POST',
       data: JSON.stringify({
         email: email,
@@ -50,7 +50,6 @@ var AuthStore = assign({}, EventEmitter.prototype, {
     });
   },
   oauth: function(provider){
-    console.log("In AuthStore");
     $.ajax({
       url: window.location.origin + '/auth/' + provider,
       type: 'POST',

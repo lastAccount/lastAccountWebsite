@@ -62,6 +62,9 @@ function router(app, passport){
   app.post('/api/update', function(req, res){
 
   });
+  app.get('/api/users', function(req, res){
+
+  });
 }
 
 /**

@@ -17,7 +17,6 @@ var AuthActions = {
     });
   },
   oauth: function(provider){
-    console.log("In AuthActions");
     AppDispatcher.dispatch({
       actionType: AuthConstants.OAUTH,
       provider: provider
