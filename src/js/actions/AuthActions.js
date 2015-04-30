@@ -15,6 +15,12 @@ var AuthActions = {
       email: email,
       password: password
     });
+  },
+  oauth: function(provider){
+    AppDispatcher.dispatch({
+      actionType: AuthConstants.OAUTH,
+      provider: provider
+    });
   }
 };
 

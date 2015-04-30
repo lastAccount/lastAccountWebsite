@@ -9,7 +9,7 @@ var CHANGE_EVENT = 'change';
 var AuthStore = assign({}, EventEmitter.prototype, {
   signup: function(email, password){
     $.ajax({
-      url: window.location.origin + '/api/signup',
+      url: window.location.origin + '/auth/signup',
       type: 'POST',
       data: JSON.stringify({
         email: email,
@@ -29,10 +29,8 @@ var AuthStore = assign({}, EventEmitter.prototype, {
     });
   },
   login: function(email, password){
-    console.log(email);
-    console.log(password);
     $.ajax({
-      url: window.location.origin + '/api/login',
+      url: window.location.origin + '/auth/login',
       type: 'POST',
       data: JSON.stringify({
         email: email,
@@ -43,6 +41,21 @@ var AuthStore = assign({}, EventEmitter.prototype, {
         console.log("Successful login");
         console.log(data);
         var id = data._id;
+        this.emitChange();
+      }.bind(this),
+      error: function(err){
+        console.error("Error in login");
+        console.error(err);
+      }
+    });
+  },
+  oauth: function(provider){
+    $.ajax({
+      url: window.location.origin + '/auth/' + provider,
+      type: 'POST',
+      success: function(data){
+        console.log("Successful oauth to", provider);
+        console.log(data);
         this.emitChange();
       }.bind(this),
       error: function(err){
@@ -72,6 +85,9 @@ AppDispatcher.register(function(action){
       break;
     case AuthConstants.LOGIN:
       AuthStore.login(action.email, action.password);
+      break;
+    case AuthConstants.OAUTH:
+      AuthStore.oauth(action.provider);
       break;
     default: 
       //no op

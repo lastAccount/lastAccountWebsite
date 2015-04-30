@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 var Template = require('./Template');
 
 var UserSchema = new mongoose.Schema({
-  templates: [Template]
+  templates: [Template],
   /**
    * Local Strategy
    */

@@ -6,7 +6,7 @@ var TemplateSchema = new mongoose.Schema({
   /**
    * Id of User model associated with Template
    */
-  user: { type: Number, ref: 'User'}
+  user: { type: Number, ref: 'User'},
   /**
    * Credentials
    */

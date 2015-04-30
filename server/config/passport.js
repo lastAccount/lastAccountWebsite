@@ -1,6 +1,7 @@
 /**
  * Dependencies
  */
+var LocalStrategy = require('passport-local').Strategy;
 var User = require('../Models/User');
 
 function passportConfiguration(passport){

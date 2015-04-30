@@ -1,7 +1,6 @@
 /**
  * MODULE DEPENDENCIES
  */
-var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
@@ -11,6 +10,11 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 function serverConfiguration(app){
+  /**
+   * Pass passport for configuration
+   */
+  require('./config/passport')(passport);
+
   /**
    * Middleware
    */
@@ -27,6 +31,10 @@ function serverConfiguration(app){
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(flash());
+  /**
+   * Load routes and pass in app and configured passport
+   */
+  require('./config/routes')(app, passport);
 }
 
 module.exports = serverConfiguration;
