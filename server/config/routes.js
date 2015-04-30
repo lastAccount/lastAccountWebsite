@@ -62,9 +62,11 @@ function router(app, passport){
   app.post('/api/update', function(req, res){
 
   });
-  app.get('/api/users', function(req, res){
-
-  });
+  // app.get('/api/users', function(req, res){
+  //   mongo.getUser({}, function(database){
+  //     console.log(database);
+  //   });
+  // });
 }
 
 /**
