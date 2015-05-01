@@ -13,7 +13,7 @@ var Template = require('./components/Template');
 var App = React.createClass({
   render: function(){
     return (
-      <Template />
+      <Auth />
     );
   }
 });

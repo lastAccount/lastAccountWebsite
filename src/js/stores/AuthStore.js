@@ -52,7 +52,7 @@ var AuthStore = assign({}, EventEmitter.prototype, {
   oauth: function(provider){
     $.ajax({
       url: window.location.origin + '/auth/' + provider,
-      type: 'POST',
+      type: 'GET',
       success: function(data){
         console.log("Successful oauth to", provider);
         console.log(data);

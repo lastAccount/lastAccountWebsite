@@ -2,6 +2,7 @@
  * Dependencies
  */
 var LocalStrategy = require('passport-local').Strategy;
+var GoogleStrategy = require('passport-google').Strategy;
 var User = require('../Models/User');
 
 function passportConfiguration(passport){
@@ -72,6 +73,20 @@ function passportConfiguration(passport){
     });
   }));
   
+  /**
+   * Google OAuth
+   */
+  passport.use(new GoogleStrategy({
+    returnURL: 'http://localhost:8080/auth/google/return',
+    realm: 'http://localhost:8080/'
+  },
+  function(id, profile, done){
+    User.findOrCreate({
+      openId: id
+    }, function(err, user){
+      done(err, user);
+    });
+  }));
 };
 
 module.exports = passportConfiguration;
