@@ -22,12 +22,17 @@ function router(app, passport){
   /**
    * Google OAuth, passport
    */
-  app.get('/auth/google', passport.authenticate('google'));
-  app.get('/auth/google/return', passport.authenticate('google', {
-    successRedirect: '/',
-    failureRedirect: '/auth',
-    failureFlash: true
+  app.get('/auth/google', passport.authenticate('google', { 
+    scope: 'https://www.googleapis.com/auth/plus.login'
   }));
+  app.get('/auth/google/callback', 
+    passport.authenticate('google', { 
+      failureRedirect: '/auth'
+    }), function(req, res) {
+      // Successful authentication, redirect home.
+      res.redirect('/');
+    });
+
   /**
    * Home Page, templates
    */
