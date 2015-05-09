@@ -21,11 +21,10 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route name="home" path="/">
+  <Route name="home" path="/" handler={App}>
   </Route>
 );
 
-React.render(
-  <App />,
-  document.getElementById('app')
-);
+Router.run(routes, Router.HistoryLocation, function (Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
+});
