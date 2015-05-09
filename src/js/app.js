@@ -1,4 +1,6 @@
 var React = require('react');
+var Router = require('react-router');
+var Route = Router.Route;
 /**
  * Needed for onTouchTap events in Material-UI
  */
@@ -17,6 +19,11 @@ var App = React.createClass({
     );
   }
 });
+
+var routes = (
+  <Route name="home" path="/">
+  </Route>
+);
 
 React.render(
   <App />,
