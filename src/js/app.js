@@ -22,6 +22,8 @@ var App = React.createClass({
 
 var routes = (
   <Route name="home" path="/" handler={App}>
+    <Route name="auth" path="/auth" handler={Auth} />
+    <Route name="template" path="/template" handler= {Template} />
   </Route>
 );
 

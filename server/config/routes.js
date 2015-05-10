@@ -4,6 +4,12 @@
 var mongo = require('../controllers/db');
 function router(app, passport){
   /**
+   * If user is already logged in, send them to template page
+   */
+  // app.get('/auth', isLoggedIn, function(req, res){
+  //   res.redirect('/template');
+  // });
+  /**
    * Handle Signup
    */
   app.post('/auth/signup', passport.authenticate('local-signup', {
