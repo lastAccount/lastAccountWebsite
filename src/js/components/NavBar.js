@@ -14,19 +14,23 @@ var RaisedButton = mui.RaisedButton;
 
 var NavBar = React.createClass({
   propTypes: {
-    items: ReactPropTypes.array,
-    id: ReactPropTypes.string
+    items: ReactPropTypes.array
   },
   render: function(){
     return (
       <div className="nav-bar">
         <Toolbar>
           <ToolbarGroup key={0} float="left">
-            <RaisedButton 
-              label="Signup/Login"
-              secondary={true}>
-              <Link to="auth"></Link>
-            </RaisedButton>
+            <Link to="template">
+              <RaisedButton 
+                label="Template"
+                secondary={true} />
+            </Link>
+            <Link to="auth">
+              <RaisedButton 
+                label="Signup/Login"
+                secondary={true} />
+            </Link>
           </ToolbarGroup>
         </Toolbar>
         <RouteHandler />

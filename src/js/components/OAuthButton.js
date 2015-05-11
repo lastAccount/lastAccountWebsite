@@ -15,11 +15,11 @@ var OAuthButton = React.createClass({
   render: function(){
     return (
       <div className="button-container">
-        <RaisedButton 
-          secondary={true}
+        <RaisedButton
+          label={"Log In With " + this.props.provider} 
+          primary={true}
           onClick={this._onSubmit}>
           <FontIcon className="muidocs-icon-custom-github example-button-icon"/>
-          <span className="mui-raised-button-label">Log In with {this.props.provider} </span>
         </RaisedButton>
       </div>
     );
