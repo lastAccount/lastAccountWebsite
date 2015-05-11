@@ -12,6 +12,11 @@ var Toolbar = mui.Toolbar;
 var ToolbarGroup = mui.ToolbarGroup;
 var RaisedButton = mui.RaisedButton;
 
+/**
+ * Component dependencies
+ */
+var LogoutButton = require('./LogoutButton');
+
 var NavBar = React.createClass({
   propTypes: {
     items: ReactPropTypes.array
@@ -31,6 +36,7 @@ var NavBar = React.createClass({
                 label="Signup/Login"
                 secondary={true} />
             </Link>
+            <LogoutButton />
           </ToolbarGroup>
         </Toolbar>
         <RouteHandler />

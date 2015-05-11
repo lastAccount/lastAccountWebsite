@@ -13,11 +13,10 @@ var LogoutButton = React.createClass({
   },
   render: function(){
     return (
-      <div class="logout-button">
-        <RaisedButton
-          label="Logout"
-          onClick={this._onClick}/>
-      </div>
+      <RaisedButton
+        secondary={true}
+        label="Logout"
+        onClick={this._onClick}/>
     );
   }
 });
