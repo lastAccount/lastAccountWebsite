@@ -8,8 +8,11 @@
   background-color: rgba(178, 235, 242, 0.2);
 }
 .template-container {
-  padding: 20px;
   float: left;
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin-left: 40vw;
+  width: 21vw;
 }
 .auth-container {
   float: left;

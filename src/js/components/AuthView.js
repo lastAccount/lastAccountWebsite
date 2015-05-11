@@ -1,5 +1,9 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
+
+/**
+ * Component Dependencies
+ */
 var Login = require('./LoginView');
 var Signup = require('./SignupView');
 
