@@ -13,12 +13,14 @@ var Signup = React.createClass({
   },
   render: function(){
     return (
-      <AuthField 
-        label="Signup"
-        className="signup"
-        emailId="signup-email"
-        passwordId="signup-password"
-        onSave={this._onSave} />
+      <div className="signup-container">
+        <AuthField 
+          label="Signup"
+          className="signup"
+          emailId="signup-email"
+          passwordId="signup-password"
+          onSave={this._onSave} />
+      </div>
     );
   }
 });

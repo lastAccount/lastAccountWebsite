@@ -9,16 +9,16 @@ var OAuthButton = React.createClass({
   propTypes: {
     provider: ReactPropTypes.string
   },
-  _onSubmit: function(){
+  _onClick: function(){
     AuthActions.oauth(this.props.provider.toLowerCase());
   },
   render: function(){
     return (
-      <div className="button-container">
+      <div className="oauth-button">
         <RaisedButton
           label={"Log In With " + this.props.provider} 
           primary={true}
-          onClick={this._onSubmit}>
+          onClick={this._onClick}>
           <FontIcon className="muidocs-icon-custom-github example-button-icon"/>
         </RaisedButton>
       </div>

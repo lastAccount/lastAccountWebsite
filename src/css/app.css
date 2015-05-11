@@ -6,3 +6,22 @@
   height: 600px;
   width: 100vw;
 }
+
+.signup-container {
+  float: left;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  padding: 20px;
+}
+.login-container {
+  float: left;
+  border-radius: 2px;
+  border-width: 2px;
+  border-color: black;
+  padding: 20px;
+}
+
+footer {
+  height: 50%;
+}
