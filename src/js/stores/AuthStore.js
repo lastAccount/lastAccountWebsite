@@ -64,6 +64,21 @@ var AuthStore = assign({}, EventEmitter.prototype, {
       }
     });
   },
+  logout: function(){
+    $.ajax({
+      url: window.location.origin + '/logout',
+      type: 'GET',
+      success: function(data){
+        console.log("Successful logout");
+        console.log(data);
+        this.emitChange();
+      }.bind(this),
+      error: function(err){
+        console.error("Error in logout");
+        console.error(err);
+      }
+    });
+  },
   emitChange: function(){
     this.emit(CHANGE_EVENT);
   },
@@ -89,6 +104,8 @@ AppDispatcher.register(function(action){
     case AuthConstants.OAUTH:
       AuthStore.oauth(action.provider);
       break;
+    case AuthConstants.LOGOUT:
+      AuthStore.logout()
     default: 
       //no op
   }
