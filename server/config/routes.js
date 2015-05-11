@@ -38,7 +38,11 @@ function router(app, passport){
       // Successful authentication, redirect home.
       res.redirect('/');
     });
-
+  //TODO: LOGOUT HANDLING
+  app.get('/auth/logout', function(req, res){
+    console.log('LOGGING OUT');
+    res.redirect('/');
+  });
   /**
    * Home Page, templates
    */

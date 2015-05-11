@@ -1,5 +1,6 @@
 var React = require('react');
 var AuthActions = require('../actions/AuthActions');
+var AuthStore = require('../stores/AuthStore');
 
 /**
  * Material UI components
@@ -9,7 +10,7 @@ var RaisedButton = mui.RaisedButton;
 
 var LogoutButton = React.createClass({
   _onClick: function(){
-    AuthActions.logout()
+    AuthActions.logout();
   },
   render: function(){
     return (

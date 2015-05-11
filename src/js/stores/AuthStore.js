@@ -66,7 +66,7 @@ var AuthStore = assign({}, EventEmitter.prototype, {
   },
   logout: function(){
     $.ajax({
-      url: window.location.origin + '/logout',
+      url: window.location.origin + '/auth/logout',
       type: 'GET',
       success: function(data){
         console.log("Successful logout");
@@ -94,6 +94,7 @@ var AuthStore = assign({}, EventEmitter.prototype, {
  * Register callback to handle all updates
  */
 AppDispatcher.register(function(action){
+  console.log(action);
   switch(action.actionType){
     case AuthConstants.SIGNUP:
       AuthStore.signup(action.email, action.password);
@@ -105,7 +106,8 @@ AppDispatcher.register(function(action){
       AuthStore.oauth(action.provider);
       break;
     case AuthConstants.LOGOUT:
-      AuthStore.logout()
+      AuthStore.logout();
+      break;
     default: 
       //no op
   }

@@ -1,5 +1,6 @@
 var React = require('react');
 var AuthActions = require('../actions/AuthActions');
+var AuthStore = require('../stores/AuthStore');
 /**
  * Component Dependencies
  */
