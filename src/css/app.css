@@ -1,27 +1,25 @@
 /**
  * For custom (i.e. not Material-UI) styling
  */
-.app {
-  margin-top: -8em;
-  height: 600px;
+#app {
+  /*margin-top: -8em;*/
+  height: 625px;
   width: 100vw;
+  background-color: rgba(178, 235, 242, 0.2);
 }
-
-.signup-container {
+.template-container {
+  padding: 20px;
   float: left;
-  border-radius: 5px;
-  border-width: 2px;
-  border-color: black;
+}
+.auth-container {
+  float: left;
+  border: 12px solid rgba(178, 235, 242, 0.2);
+  background-color: #FFFFFF;
   padding: 20px;
 }
-.login-container {
-  float: left;
-  border-radius: 2px;
-  border-width: 2px;
-  border-color: black;
-  padding: 20px;
-}
-
 footer {
-  height: 50%;
+  padding: 20px;
+  float: left;
+  background-color: #CFCFCF;
+  width: 100vw;
 }

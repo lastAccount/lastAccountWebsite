@@ -13,7 +13,7 @@ var Login = React.createClass({
   },
   render: function(){
     return (
-      <div className="login-container">
+      <div className="login-container auth-container">
         <AuthField
           label="Login"
           className="login"

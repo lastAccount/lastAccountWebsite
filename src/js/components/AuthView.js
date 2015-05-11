@@ -7,7 +7,7 @@ var Signup = require('./SignupView');
 var AuthView = React.createClass({
   render: function(){
     return (
-      <div id="auth-container">
+      <div>
         <Signup />
         <Login />
       </div>
