@@ -20,6 +20,9 @@
   background-color: #FFFFFF;
   padding: 20px;
 }
+.oauth-button {
+  padding-top: 20px;
+}
 footer {
   padding: 20px;
   float: left;

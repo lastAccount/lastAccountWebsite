@@ -21,9 +21,9 @@ var SubmitButton = React.createClass({
     return (
       <RaisedButton
         label={this.props.label}
-        id: {this.props.id}
-        className: {this.props.className}
-        onClick: this._submit />
+        id={this.props.id}
+        className={this.props.className}
+        onClick={this._submit} />
     );
   }
 });
