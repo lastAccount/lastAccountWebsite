@@ -4,6 +4,12 @@
 var mongo = require('../controllers/db');
 function router(app, passport){
   /**
+   * If user is already logged in, send them to template page
+   */
+  // app.get('/auth', isLoggedIn, function(req, res){
+  //   res.redirect('/template');
+  // });
+  /**
    * Handle Signup
    */
   app.post('/auth/signup', passport.authenticate('local-signup', {
@@ -22,12 +28,21 @@ function router(app, passport){
   /**
    * Google OAuth, passport
    */
-  app.get('/auth/google', passport.authenticate('google'));
-  app.get('/auth/google/return', passport.authenticate('google', {
-    successRedirect: '/',
-    failureRedirect: '/auth',
-    failureFlash: true
+  app.get('/auth/google', passport.authenticate('google', { 
+    scope: 'https://www.googleapis.com/auth/plus.login'
   }));
+  app.get('/auth/google/callback', 
+    passport.authenticate('google', { 
+      failureRedirect: '/auth'
+    }), function(req, res) {
+      // Successful authentication, redirect home.
+      res.redirect('/');
+    });
+  //TODO: LOGOUT HANDLING
+  app.get('/auth/logout', function(req, res){
+    console.log('LOGGING OUT');
+    res.redirect('/');
+  });
   /**
    * Home Page, templates
    */

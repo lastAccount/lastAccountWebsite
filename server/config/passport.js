@@ -2,7 +2,9 @@
  * Dependencies
  */
 var LocalStrategy = require('passport-local').Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../Models/User');
+var secret = require('./secret');
 
 function passportConfiguration(passport){
   /**
@@ -53,12 +55,11 @@ function passportConfiguration(passport){
    * LOCAL LOGIN
    */
   passport.use('local-login', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
-    passReqToCallback: true
-  },
-  function(req, email, password, done){
-    User.findOne({'local.email' : email}, function(err, user){
+      usernameField: 'email',
+      passwordField: 'password',
+      passReqToCallback: true
+    },
+    function(req, email, password, done){
       if(err){
         return done(err);
       }
@@ -69,9 +70,23 @@ function passportConfiguration(passport){
         return done(null, false, req.flash('loginMessage', 'Incorrect password.'));
       }
       return done(null, user);
-    });
-  }));
+    })
+  );
   
+  /**
+   * Google OAuth
+   */
+  passport.use(new GoogleStrategy({
+      clientID: secret.GOOGLE_CLIENT_ID,
+      clientSecret: secret.GOOGLE_SECRET,
+      callbackURL: "http://localhost:8080/auth/google/callback"
+    },
+    function(accessToken, refreshToken, profile, done) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
+        return done(err, user);
+      });
+    }
+  ));
 };
 
 module.exports = passportConfiguration;

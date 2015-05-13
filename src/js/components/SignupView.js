@@ -1,5 +1,4 @@
 var React = require('react');
-var $ = require('jquery');
 var AuthActions = require('../actions/AuthActions');
 var AuthStore = require('../stores/AuthStore');
 /**
@@ -13,12 +12,14 @@ var Signup = React.createClass({
   },
   render: function(){
     return (
-      <AuthField 
-        label="Signup"
-        className="signup"
-        emailId="signup-email"
-        passwordId="signup-password"
-        onSave={this._onSave} />
+      <div className="signup-container auth-container">
+        <AuthField 
+          label="Signup"
+          className="signup"
+          emailId="signup-email"
+          passwordId="signup-password"
+          onSave={this._onSave} />
+      </div>
     );
   }
 });

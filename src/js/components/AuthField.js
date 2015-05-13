@@ -5,6 +5,7 @@ var $ = require('jquery');
  * Component Dependencies
  */
 var TextInput = require('./TextInput');
+var SubmitButton = require('./SubmitButton');
 
 var AuthField = React.createClass({
   propTypes: {
@@ -15,8 +16,9 @@ var AuthField = React.createClass({
     onSave: ReactPropTypes.func.isRequired
   },
   _onSave: function(){
-    var email = $('#signup-email').val().trim();
-    var password = $('#signup-password').val().trim();
+    var type = this.props.className;
+    var email = $('#' + type + '-email').val().trim();
+    var password = $('#' + type + '-password').val().trim();
     if (email && password) {
       this.props.onSave(email, password);
     }
@@ -39,6 +41,12 @@ var AuthField = React.createClass({
           id={this.props.passwordId}
           type="password" 
           onSave={this._onSave} />
+        <br />
+        <SubmitButton 
+          label={this.props.label}
+          className={this.props.className}
+          id={this.props.className + '-submit'}
+          onSubmit={this._onSave} />
       </form>
     );
   }

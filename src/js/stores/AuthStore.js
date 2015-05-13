@@ -52,7 +52,7 @@ var AuthStore = assign({}, EventEmitter.prototype, {
   oauth: function(provider){
     $.ajax({
       url: window.location.origin + '/auth/' + provider,
-      type: 'POST',
+      type: 'GET',
       success: function(data){
         console.log("Successful oauth to", provider);
         console.log(data);
@@ -60,6 +60,21 @@ var AuthStore = assign({}, EventEmitter.prototype, {
       }.bind(this),
       error: function(err){
         console.error("Error in login");
+        console.error(err);
+      }
+    });
+  },
+  logout: function(){
+    $.ajax({
+      url: window.location.origin + '/auth/logout',
+      type: 'GET',
+      success: function(data){
+        console.log("Successful logout");
+        console.log(data);
+        this.emitChange();
+      }.bind(this),
+      error: function(err){
+        console.error("Error in logout");
         console.error(err);
       }
     });
@@ -79,6 +94,7 @@ var AuthStore = assign({}, EventEmitter.prototype, {
  * Register callback to handle all updates
  */
 AppDispatcher.register(function(action){
+  console.log(action);
   switch(action.actionType){
     case AuthConstants.SIGNUP:
       AuthStore.signup(action.email, action.password);
@@ -88,6 +104,9 @@ AppDispatcher.register(function(action){
       break;
     case AuthConstants.OAUTH:
       AuthStore.oauth(action.provider);
+      break;
+    case AuthConstants.LOGOUT:
+      AuthStore.logout();
       break;
     default: 
       //no op

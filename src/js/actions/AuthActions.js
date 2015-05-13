@@ -21,6 +21,11 @@ var AuthActions = {
       actionType: AuthConstants.OAUTH,
       provider: provider
     });
+  },
+  logout: function(){
+    AppDispatcher.dispatch({
+      actionType: AuthConstants.LOGOUT
+    });
   }
 };
 
